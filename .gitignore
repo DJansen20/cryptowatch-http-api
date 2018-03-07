@@ -1,0 +1,8 @@
+vendor
+develop
+composer.lock
+composer.phar
+.idea
+coverage
+phpunit.xml
+phpunit-scenario.xml

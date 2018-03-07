@@ -1,0 +1,33 @@
+{
+    "name": "djansen20/cryptowatch-http-api",
+    "description": "Package for the client implementation of the cryptowatch HTTP API",
+    "type": "library",
+    "keywords": [
+        "cryptowatch",
+        "api"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Danny Jansen",
+            "email": "danny.jansen93@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cryptowatch\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cryptowatch\\Tests\\": "tests/"
+        }
+    }
+}
