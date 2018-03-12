@@ -10,22 +10,22 @@ namespace Cryptowatch\Common\Traits;
 trait PairsTrait
 {
     /**
-     * @var string
+     * @var null|string
      */
     protected $pair;
 
     /**
-     * @param string $pair
+     * @param null|string $pair
      */
-    public function setPair(string $pair): void
+    public function setPair(?string $pair): void
     {
         $this->pair = $pair;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getPair(): string
+    public function getPair(): ?string
     {
         return $this->pair;
     }

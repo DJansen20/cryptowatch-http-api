@@ -10,22 +10,22 @@ namespace Cryptowatch\Common\Traits;
 trait ExchangesTrait
 {
     /**
-     * @var string
+     * @var null|string
      */
     protected $exchange;
 
     /**
-     * @param string $exchange
+     * @param null|string $exchange
      */
-    public function setExchange(string $exchange): void
+    public function setExchange(?string $exchange): void
     {
         $this->exchange = $exchange;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getExchange(): string
+    public function getExchange(): ?string
     {
         return $this->exchange;
     }
