@@ -20,6 +20,7 @@ class ResponseTest extends TestCase
             'blaat2'
         ]
     ];
+
     /**
      * @covers \Cryptowatch\Common\Response
      * @covers \Cryptowatch\Common\Response::jsonSerialize
@@ -28,7 +29,7 @@ class ResponseTest extends TestCase
      * @return void
      * @throws \ReflectionException
      */
-    public function testCanBeConstructed()
+    public function testCanBeConstructed(): void
     {
         /** @var $stub Response|\PHPUnit_Framework_MockObject_MockObject */
         $stub = $this->createMock('\\Cryptowatch\\Common\\Response');
