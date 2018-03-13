@@ -21,7 +21,7 @@ abstract class Request
      *
      * @var string $endpoint
      */
-    protected $endpoint = 'https://api.cryptowat.ch';
+    protected $endpoint = 'https://api.cryptowat.ch/';
 
     /**
      * @param string $controller

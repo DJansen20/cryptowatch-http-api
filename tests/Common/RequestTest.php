@@ -54,6 +54,6 @@ class RequestTest extends TestCase
      */
     public function testGetEndpoint(Request $request)
     {
-        $this->assertEquals('https://api.cryptowat.ch', $request->getEndpoint());
+        $this->assertEquals('https://api.cryptowat.ch/', $request->getEndpoint());
     }
 }
