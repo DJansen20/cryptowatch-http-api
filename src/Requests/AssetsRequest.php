@@ -47,6 +47,6 @@ class AssetsRequest extends Request
      */
     public function withUri(): string
     {
-        return rtrim(sprintf('$s/%s', $this->getController(), $this->getAsset()), '/');
+        return rtrim(sprintf('%s/%s', $this->getController(), $this->getAsset()), '/');
     }
 }
