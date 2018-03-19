@@ -52,7 +52,7 @@ class MarketsRequest extends Request
         ?string $exchange = null,
         ?string $pair = null,
         ?string $subcommand = null,
-        array $params = []
+        ?array $params = []
     ) {
         $this->setController('markets');
         $this->setExchange($exchange);

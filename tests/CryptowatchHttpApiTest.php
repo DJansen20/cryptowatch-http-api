@@ -47,4 +47,21 @@ class CryptowatchHttpApiTest extends TestCase
         $response = CryptowatchHttpApi::getAggregate('prices');
         $this->assertInstanceOf('Cryptowatch\\Responses\\AggregateResponse', $response);
     }
+
+    /**
+     * @throws \Cryptowatch\Exceptions\ParameterException
+     * @throws \Exception
+     */
+    public function testGetMarkets(): void
+    {
+        $params = [
+            'after' => 1481563244,
+            'before' => 1481663244,
+            'periods' => 86400
+        ];
+
+        $response = CryptowatchHttpApi::getMarkets('bitstamp', 'btcusd', 'ohlc', $params);
+        $this->assertInstanceOf('Cryptowatch\\Responses\\MarketsResponse', $response);
+        var_dump($response->asArray());
+    }
 }

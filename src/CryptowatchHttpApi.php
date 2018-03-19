@@ -12,10 +12,12 @@ use Cryptowatch\Common\Transport;
 use Cryptowatch\Requests\AggregateRequest;
 use Cryptowatch\Requests\AssetsRequest;
 use Cryptowatch\Requests\ExchangesRequest;
+use Cryptowatch\Requests\MarketsRequest;
 use Cryptowatch\Requests\PairsRequest;
 use Cryptowatch\Responses\AggregateResponse;
 use Cryptowatch\Responses\AssetsResponse;
 use Cryptowatch\Responses\ExchangesResponse;
+use Cryptowatch\Responses\MarketsResponse;
 use Cryptowatch\Responses\PairsResponse;
 
 class CryptowatchHttpApi
@@ -72,6 +74,24 @@ class CryptowatchHttpApi
         $request = new AggregateRequest($method);
         $json = self::sendRequest($request);
         $response = new AggregateResponse($json);
+
+        return $response;
+    }
+
+    /**
+     * @param null|string $exchange
+     * @param null|string $pairs
+     * @param null|string $subcommand
+     * @param array|null $params
+     * @return MarketsResponse
+     * @throws Exceptions\ParameterException
+     * @throws \Exception
+     */
+    public static function getMarkets(?string $exchange = null, ?string $pairs = null, ?string $subcommand, ?array $params): MarketsResponse
+    {
+        $request = new MarketsRequest($exchange, $pairs, $subcommand, $params);
+        $json = self::sendRequest($request);
+        $response = new MarketsResponse($json);
 
         return $response;
     }
