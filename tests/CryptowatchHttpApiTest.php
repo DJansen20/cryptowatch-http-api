@@ -13,6 +13,8 @@ use Cryptowatch\CryptowatchHttpApi;
 class CryptowatchHttpApiTest extends TestCase
 {
     /**
+     * @covers \Cryptowatch\CryptowatchHttpApi::getAssets
+     *
      * @throws \Exception
      */
     public function testGetAssets(): void
@@ -22,6 +24,8 @@ class CryptowatchHttpApiTest extends TestCase
     }
 
     /**
+     * @covers \Cryptowatch\CryptowatchHttpApi::getPairs
+     *
      * @throws \Exception
      */
     public function testGetPairs(): void
@@ -31,6 +35,8 @@ class CryptowatchHttpApiTest extends TestCase
     }
 
     /**
+     * @covers \Cryptowatch\CryptowatchHttpApi::getExchanges
+     *
      * @throws \Exception
      */
     public function testGetExchanges(): void
@@ -40,6 +46,8 @@ class CryptowatchHttpApiTest extends TestCase
     }
 
     /**
+     * @covers \Cryptowatch\CryptowatchHttpApi::getAggregate
+     *
      * @throws \Exception
      */
     public function testGetAggregate(): void
@@ -49,6 +57,8 @@ class CryptowatchHttpApiTest extends TestCase
     }
 
     /**
+     * @covers \Cryptowatch\CryptowatchHttpApi::getMarkets
+     *
      * @throws \Cryptowatch\Exceptions\ParameterException
      * @throws \Exception
      */
@@ -62,6 +72,5 @@ class CryptowatchHttpApiTest extends TestCase
 
         $response = CryptowatchHttpApi::getMarkets('bitstamp', 'btcusd', 'ohlc', $params);
         $this->assertInstanceOf('Cryptowatch\\Responses\\MarketsResponse', $response);
-        var_dump($response->asArray());
     }
 }
