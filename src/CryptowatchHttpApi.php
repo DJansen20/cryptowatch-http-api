@@ -10,7 +10,9 @@ namespace Cryptowatch;
 use Cryptowatch\Common\Request;
 use Cryptowatch\Common\Transport;
 use Cryptowatch\Requests\AssetsRequest;
+use Cryptowatch\Requests\PairsRequest;
 use Cryptowatch\Responses\AssetsResponse;
+use Cryptowatch\Responses\PairsResponse;
 
 class CryptowatchHttpApi
 {
@@ -24,6 +26,20 @@ class CryptowatchHttpApi
         $request = new AssetsRequest($asset);
         $json = self::sendRequest($request);
         $response = new AssetsResponse($json);
+
+        return $response;
+    }
+
+    /**
+     * @param null|string $pair
+     * @return PairsResponse
+     * @throws \Exception
+     */
+    public static function getPairs(?string $pair = null): PairsResponse
+    {
+        $request = new PairsRequest($pair);
+        $json = self::sendRequest($request);
+        $response = new PairsResponse($json);
 
         return $response;
     }
