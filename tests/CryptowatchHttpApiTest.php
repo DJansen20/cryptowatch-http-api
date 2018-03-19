@@ -38,4 +38,13 @@ class CryptowatchHttpApiTest extends TestCase
         $response = CryptowatchHttpApi::getExchanges('bitstamp');
         $this->assertInstanceOf('Cryptowatch\\Responses\\ExchangesResponse', $response);
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function testGetAggregate(): void
+    {
+        $response = CryptowatchHttpApi::getAggregate('prices');
+        $this->assertInstanceOf('Cryptowatch\\Responses\\AggregateResponse', $response);
+    }
 }
