@@ -29,4 +29,13 @@ class CryptowatchHttpApiTest extends TestCase
         $response = CryptowatchHttpApi::getPairs('neobtc');
         $this->assertInstanceOf('Cryptowatch\\Responses\\PairsResponse', $response);
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function testGetExchanges(): void
+    {
+        $response = CryptowatchHttpApi::getExchanges('bitstamp');
+        $this->assertInstanceOf('Cryptowatch\\Responses\\ExchangesResponse', $response);
+    }
 }
