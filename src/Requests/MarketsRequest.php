@@ -22,7 +22,8 @@ class MarketsRequest extends Request
         'summary',
         'orderbook',
         'trades',
-        'ohlc'
+        'ohlc',
+        null
     ];
 
     const ALLOWED_PARAMS = [
