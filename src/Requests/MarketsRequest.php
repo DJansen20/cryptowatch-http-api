@@ -22,7 +22,8 @@ class MarketsRequest extends Request
         'summary',
         'orderbook',
         'trades',
-        'ohlc'
+        'ohlc',
+        null
     ];
 
     const ALLOWED_PARAMS = [
@@ -45,7 +46,7 @@ class MarketsRequest extends Request
      * @param null|string $exchange
      * @param null|string $pair
      * @param null|string $subcommand
-     * @param array $params
+     * @param null|array $params
      * @throws ParameterException
      */
     public function __construct(
@@ -99,23 +100,25 @@ class MarketsRequest extends Request
     /**
      * Checks which parameters were given and validate them
      *
-     * @param array $params
+     * @param null|array $params
      */
-    private function paramBuilder(array $params): void
+    private function paramBuilder(?array $params): void
     {
-        foreach ($params as $param => $value) {
-            switch ($this->getSubcommand()) {
-                case 'trades':
-                    if (in_array($param, self::ALLOWED_PARAMS['trades'])) {
-                        $this->parameters[$param] = $value;
-                    }
-                    break;
+        if (!is_null($params)) {
+            foreach ($params as $param => $value) {
+                switch ($this->getSubcommand()) {
+                    case 'trades':
+                        if (in_array($param, self::ALLOWED_PARAMS['trades'])) {
+                            $this->parameters[$param] = $value;
+                        }
+                        break;
 
-                case 'ohlc':
-                    if (in_array($param, self::ALLOWED_PARAMS['ohlc'])) {
-                        $this->parameters[$param] = $value;
-                    }
-                    break;
+                    case 'ohlc':
+                        if (in_array($param, self::ALLOWED_PARAMS['ohlc'])) {
+                            $this->parameters[$param] = $value;
+                        }
+                        break;
+                }
             }
         }
     }

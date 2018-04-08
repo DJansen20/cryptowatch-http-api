@@ -87,7 +87,7 @@ class CryptowatchHttpApi
      * @throws Exceptions\ParameterException
      * @throws \Exception
      */
-    public static function getMarkets(?string $exchange = null, ?string $pairs = null, ?string $subcommand, ?array $params): MarketsResponse
+    public static function getMarkets(?string $exchange = null, ?string $pairs = null, ?string $subcommand = null, ?array $params = []): MarketsResponse
     {
         $request = new MarketsRequest($exchange, $pairs, $subcommand, $params);
         $json = self::sendRequest($request);
