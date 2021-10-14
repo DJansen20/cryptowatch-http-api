@@ -6,11 +6,19 @@ A rough implementation of the Cryptowatch HTTP API
 # Installation
 This package can be installed using composer
 ```php
-composer require djansen20/cryptowatch-http-api dev-master
+composer require djansen20/cryptowatch-http-api:^1.0
+```
+Or add the following directly into your composer.json
+```json
+{
+    "require": {
+        "djansen20/cryptowatch-http-api": "^1.0"
+    }
+}
 ```
 
 ## Usage
-In order to use this library, includ the following namespace into you project
+In order to use this library, include the following namespace into you project
 
 ```php
 use Cryptowatch\CryptowatchHttpApi
