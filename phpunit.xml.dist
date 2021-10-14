@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<phpunit colors="true">
-    <testsuites>
-        <testsuite name="CryptowatchHttpApiTests">
-            <directory>./tests/</directory>
-        </testsuite>
-    </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhiteList="true">
-            <directory suffix=".php">./src/</directory>
-        </whitelist>
-    </filter>
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd">
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src/</directory>
+        </include>
+    </coverage>
+    <testsuite name="Unit tests">
+        <directory>tests/</directory>
+    </testsuite>
 </phpunit>
